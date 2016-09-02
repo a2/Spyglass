@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of Spyglass.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Spyglass",
+  "homepage": "https://github.com/a2/Spyglass",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,12 @@
     "Alexsander Akers": "me@a2.io"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/Spyglass.git",
+    "git": "https://github.com/a2/Spyglass.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/a2",
   "platforms": {
-    "ios": "8.0"
+    "ios": "7.0"
   },
   "source_files": "Spyglass/Classes/**/*"
 }
