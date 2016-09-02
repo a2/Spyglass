@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Spyglass_Example' do
+  pod 'Spyglass', :path => '../'
+
+  target 'Spyglass_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
