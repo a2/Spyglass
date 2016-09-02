@@ -1,0 +1,16 @@
+PODS:
+  - Spyglass (0.1.0)
+
+DEPENDENCIES:
+  - Spyglass (from `../`)
+
+EXTERNAL SOURCES:
+  Spyglass:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Spyglass: 20f9995b0ba4413f38159a0093e0d68aa4033fe6
+
+PODFILE CHECKSUM: 7f29fec40c4a1bd8ec5cb01dfbe6b1a76544e34f
+
+COCOAPODS: 1.1.0.beta.1
