@@ -3,7 +3,7 @@
 //  Spyglass
 //
 //  Created by Alexsander Akers on 09/03/2016.
-//  Copyright (c) 2016 Alexsander Akers. All rights reserved.
+//  Copyright © 2016 Pandamonia LLC. All rights reserved.
 //
 
 import UIKit

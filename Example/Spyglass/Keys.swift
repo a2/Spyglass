@@ -3,7 +3,7 @@
 //  Spyglass
 //
 //  Created by Alexsander Akers on 9/3/16.
-//  Copyright © 2016 CocoaPods. All rights reserved.
+//  Copyright © 2016 Pandamonia LLC. All rights reserved.
 //
 
 import Foundation
