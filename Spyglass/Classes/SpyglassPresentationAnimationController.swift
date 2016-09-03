@@ -1,5 +1,5 @@
 //
-//  SpyglassPushAnimationController.swift
+//  SpyglassPresentationAnimationController.swift
 //  Spyglass
 //
 //  Created by Alexsander Akers on 09/02/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class SpyglassPushAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
+public class SpyglassPresentationAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     public var animationDuration = TimeInterval(0.3)
 
     var transitionType: SpyglassTransitionType {
