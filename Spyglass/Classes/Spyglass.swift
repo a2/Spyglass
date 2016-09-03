@@ -10,7 +10,16 @@ import UIKit
 
 public class Spyglass: NSObject, UINavigationControllerDelegate {
     public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        switch operation {
+        case .push:
+            return SpyglassPresentationAnimationController()
+
+        case .pop:
+            return SpyglassDismissalAnimationController()
+
+        default:
+            return nil
+        }
     }
 
     public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
