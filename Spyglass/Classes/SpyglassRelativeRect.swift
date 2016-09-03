@@ -12,11 +12,15 @@ public struct SpyglassRelativeRect {
     // In window coordinates
     fileprivate let rect: CGRect
 
-    public init(rect: CGRect, view: UIView) {
+    public init(rect: CGRect, relativeTo view: UIView) {
         self.rect = view.convert(rect, to: nil)
     }
 
-    func frame(relativeTo view: UIView) -> CGRect {
+    public init(view: UIView) {
+        self.rect = view.convert(view.bounds, to: nil)
+    }
+
+    public func frame(relativeTo view: UIView) -> CGRect {
         return view.convert(rect, from: nil)
     }
 }

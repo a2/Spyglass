@@ -15,6 +15,10 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		833F669A1D7A1037003DCC26 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F66991D7A1037003DCC26 /* RootViewController.swift */; };
+		83BDD9B81D7B75AD003CF8A2 /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD9B71D7B75AD003CF8A2 /* UIColor+HexValue.swift */; };
+		83BDD9BA1D7B77D9003CF8A2 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD9B91D7B77D9003CF8A2 /* ColorViewController.swift */; };
+		83BDD9BC1D7B7A48003CF8A2 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD9BB1D7B7A48003CF8A2 /* Keys.swift */; };
+		83BDD9BE1D7B8298003CF8A2 /* UIPageViewController+Spyglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDD9BD1D7B8298003CF8A2 /* UIPageViewController+Spyglass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		669A522F41FB23B9F50B216D /* Pods-Spyglass_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spyglass_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spyglass_Example/Pods-Spyglass_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		793326C2B021505043EB7B34 /* Pods-Spyglass_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spyglass_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spyglass_Tests/Pods-Spyglass_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		833F66991D7A1037003DCC26 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		83BDD9B71D7B75AD003CF8A2 /* UIColor+HexValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
+		83BDD9B91D7B77D9003CF8A2 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		83BDD9BB1D7B7A48003CF8A2 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		83BDD9BD1D7B8298003CF8A2 /* UIPageViewController+Spyglass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Spyglass.swift"; sourceTree = "<group>"; };
 		D2FB83B4ECA4370D146B869D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DFBBCE439C911E6846190077 /* Pods-Spyglass_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spyglass_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spyglass_Example/Pods-Spyglass_Example.release.xcconfig"; sourceTree = "<group>"; };
 		FA412F67678CA00172BC5BFA /* Spyglass.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Spyglass.podspec; path = ../Spyglass.podspec; sourceTree = "<group>"; };
@@ -94,11 +102,15 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				83BDD9B91D7B77D9003CF8A2 /* ColorViewController.swift */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				83BDD9BB1D7B7A48003CF8A2 /* Keys.swift */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				833F66991D7A1037003DCC26 /* RootViewController.swift */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				83BDD9B71D7B75AD003CF8A2 /* UIColor+HexValue.swift */,
+				83BDD9BD1D7B8298003CF8A2 /* UIPageViewController+Spyglass.swift */,
 			);
 			name = "Example for Spyglass";
 			path = Spyglass;
@@ -364,7 +376,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				833F669A1D7A1037003DCC26 /* RootViewController.swift in Sources */,
+				83BDD9B81D7B75AD003CF8A2 /* UIColor+HexValue.swift in Sources */,
+				83BDD9BA1D7B77D9003CF8A2 /* ColorViewController.swift in Sources */,
+				83BDD9BE1D7B8298003CF8A2 /* UIPageViewController+Spyglass.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				83BDD9BC1D7B7A48003CF8A2 /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

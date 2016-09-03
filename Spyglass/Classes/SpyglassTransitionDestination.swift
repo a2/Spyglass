@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol SpyglassTransitionDestinationProvider {
-    func transitionDestination() -> SpyglassTransitionDestination
+    func transitionDestination() -> SpyglassTransitionDestination?
 }
 
 public protocol SpyglassTransitionDestination {

@@ -9,11 +9,11 @@
 import Foundation
 
 public protocol SpyglassTransitionSourceProvider {
-    func transitionSource() -> SpyglassTransitionSource
+    func transitionSource() -> SpyglassTransitionSource?
 }
 
 public protocol SpyglassTransitionSource {
-    func userInfo(for transitionType: SpyglassTransitionType) -> [String: Any]?
+    func userInfo(for transitionType: SpyglassTransitionType, from initialViewController: UIViewController, to finalViewController: UIViewController) -> [String: Any]?
     func snapshotView(for transitionType: SpyglassTransitionType, userInfo: [String: Any]?) -> UIView
     func sourceRect(for transitionType: SpyglassTransitionType, userInfo: [String: Any]?) -> SpyglassRelativeRect
 }
