@@ -101,16 +101,8 @@
 		607FACD21AFB9204008FA782 /* Example for Spyglass */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				83BDD9B91D7B77D9003CF8A2 /* ColorViewController.swift */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				83BDD9BB1D7B7A48003CF8A2 /* Keys.swift */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				833F66991D7A1037003DCC26 /* RootViewController.swift */,
+				831989EB1D7C5F9F0044A3C0 /* Source */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				83BDD9B71D7B75AD003CF8A2 /* UIColor+HexValue.swift */,
-				83BDD9BD1D7B8298003CF8A2 /* UIPageViewController+Spyglass.swift */,
 			);
 			name = "Example for Spyglass";
 			path = Spyglass;
@@ -119,7 +111,10 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,6 +144,19 @@
 				302A4BE82776585BB14180E2 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		831989EB1D7C5F9F0044A3C0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				83BDD9B91D7B77D9003CF8A2 /* ColorViewController.swift */,
+				83BDD9BB1D7B7A48003CF8A2 /* Keys.swift */,
+				833F66991D7A1037003DCC26 /* RootViewController.swift */,
+				83BDD9B71D7B75AD003CF8A2 /* UIColor+HexValue.swift */,
+				83BDD9BD1D7B8298003CF8A2 /* UIPageViewController+Spyglass.swift */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 		88E1E4BDCF1428ED98FF23BF /* Frameworks */ = {
