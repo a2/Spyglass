@@ -11,15 +11,18 @@ import UIKit
 
 private let DefaultCellIdentifier = "DefaultCell"
 
-class RootViewController: UICollectionViewController, SpyglassTransitionSource, SpyglassTransitionDestination, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-    let colors: [UIColor] = {
-        let a = 17
-        let b = 3
+class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTransitionSource, SpyglassTransitionDestination, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    @IBOutlet var collectionView: UICollectionView!
+
+    var colors: [UIColor]!
+    var collectionViewDataSource: CollectionViewDataSource!
+
+    func makeColors(stopIncrement: Int = 3, totalStops: Int = 17) -> [UIColor] {
         return (0 ..< 100).map { i in
-            let hue = CGFloat((i * b) % a) / CGFloat(a)
+            let hue = CGFloat((i * stopIncrement) % totalStops) / CGFloat(totalStops)
             return UIColor(hue: hue, saturation: 0.8, brightness: 1, alpha: 1)
         }
-    }()
+    }
 
     func makeColorViewController(atIndex index: Int) -> ColorViewController {
         let colorViewController = storyboard!.instantiateViewController(withIdentifier: "ColorViewController") as! ColorViewController
@@ -28,19 +31,18 @@ class RootViewController: UICollectionViewController, SpyglassTransitionSource, 
         return colorViewController
     }
 
+    // MARK: - View Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        colors = makeColors()
+        collectionViewDataSource = CollectionViewDataSource(colors: colors, cellReuseIdentifier: DefaultCellIdentifier)
+    }
+
     // MARK: - Collection View
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colors.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DefaultCellIdentifier, for: indexPath)
-        cell.backgroundColor = colors[indexPath.item]
-        return cell
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: [UIPageViewControllerOptionInterPageSpacingKey: CGFloat(10)])
         pageViewController.dataSource = self
         pageViewController.delegate = self
@@ -94,8 +96,8 @@ class RootViewController: UICollectionViewController, SpyglassTransitionSource, 
         if transitionType == .dismissal {
             let rootViewController = finalViewController as! RootViewController
             let indexPath = IndexPath(item: index, section: 0)
-            let frame = rootViewController.collectionView!.layoutAttributesForItem(at: indexPath)!.frame
-            rootViewController.collectionView!.scrollRectToVisible(frame, animated: false)
+            let frame = rootViewController.collectionView.layoutAttributesForItem(at: indexPath)!.frame
+            rootViewController.collectionView.scrollRectToVisible(frame, animated: false)
         }
 
         return [
@@ -113,7 +115,7 @@ class RootViewController: UICollectionViewController, SpyglassTransitionSource, 
 
     func cellRect(atIndex index: Int) -> SpyglassRelativeRect {
         let indexPath = IndexPath(item: index, section: 0)
-        let cell = collectionView!.cellForItem(at: indexPath)!
+        let cell = collectionView.cellForItem(at: indexPath)!
         return SpyglassRelativeRect(view: cell)
     }
 

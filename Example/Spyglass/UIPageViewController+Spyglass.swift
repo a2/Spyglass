@@ -11,10 +11,18 @@ import UIKit
 
 extension UIPageViewController: SpyglassTransitionSourceProvider, SpyglassTransitionDestinationProvider {
     public func transitionSource() -> SpyglassTransitionSource? {
-        return dataSource as? SpyglassTransitionSource
+        if let sourceProvider = dataSource as? SpyglassTransitionSourceProvider {
+            return sourceProvider.transitionSource()
+        } else {
+            return dataSource as? SpyglassTransitionSource
+        }
     }
 
     public func transitionDestination() -> SpyglassTransitionDestination? {
-        return dataSource as? SpyglassTransitionDestination
+        if let destinationProvider = dataSource as? SpyglassTransitionDestinationProvider {
+            return destinationProvider.transitionDestination()
+        } else {
+            return dataSource as? SpyglassTransitionDestination
+        }
     }
 }
