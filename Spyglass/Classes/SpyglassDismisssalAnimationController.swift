@@ -8,12 +8,11 @@
 
 import UIKit
 
+private let TransitionType = SpyglassTransitionType.dismissal
+
 public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     public var animationDuration = TimeInterval(0.3)
-
-    var transitionType: SpyglassTransitionType {
-        return .dismissal
-    }
+    public var transitionStyle = SpyglassTransitionStyle.navigation
 
     // MARK: - Animated Transitioning
 
@@ -38,16 +37,32 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
         let toView = transitionContext.view(forKey: .to)
 
         if let toView = toView {
-            if initialToFrame != .zero {
-                toView.frame = initialToFrame
+            switch transitionStyle {
+            case .navigation:
+                if finalToFrame != .zero {
+                    toView.frame = finalToFrame
+                }
+
+            case .modalPresentation:
+                if initialToFrame != .zero {
+                    toView.frame = initialToFrame
+                }
             }
 
             containerView.addSubview(toView)
         }
 
         if let fromView = fromView {
-            if initialFromFrame != .zero {
-                fromView.frame = initialFromFrame
+            switch transitionStyle {
+            case .navigation:
+                if finalFromFrame != .zero {
+                    fromView.frame = finalFromFrame
+                }
+
+            case .modalPresentation:
+                if initialFromFrame != .zero {
+                    fromView.frame = initialFromFrame
+                }
             }
 
             containerView.addSubview(fromView)
@@ -60,15 +75,15 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
         let transitionDestination = findTransitionDestination(for: toVC)
 
         // Get snapshotView
-        let userInfo: [String: Any]??
+        let userInfo: SpyglassUserInfo??
         let snapshotView: UIView?
         let snapshotSourceRect: SpyglassRelativeRect?
         let snapshotDestinationRect: SpyglassRelativeRect?
 
         if let source = transitionSource, transitionDestination != nil {
-            let _userInfo = source.userInfo(for: transitionType, from: fromVC, to: toVC)
-            snapshotView = source.snapshotView(for: transitionType, userInfo: _userInfo)
-            snapshotSourceRect = source.sourceRect(for: transitionType, userInfo: _userInfo)
+            let _userInfo = source.userInfo(for: TransitionType, from: fromVC, to: toVC)
+            snapshotView = source.snapshotView(for: TransitionType, userInfo: _userInfo)
+            snapshotSourceRect = source.sourceRect(for: TransitionType, userInfo: _userInfo)
             userInfo = _userInfo
         } else {
             snapshotView = nil
@@ -77,7 +92,7 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
         }
 
         if let destination = transitionDestination, let userInfo = userInfo {
-            snapshotDestinationRect = destination.destinationRect(for: transitionType, userInfo: userInfo)
+            snapshotDestinationRect = destination.destinationRect(for: TransitionType, userInfo: userInfo)
         } else {
             snapshotDestinationRect = nil
         }
@@ -87,17 +102,30 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
             containerView.addSubview(snapshotView)
         }
 
+        // Notify source / destination about transition start
+        let flatUserInfo: SpyglassUserInfo?
+        if let userInfo = userInfo {
+            flatUserInfo = userInfo
+        } else {
+            flatUserInfo = nil
+        }
+
+        transitionSource?.sourceTransitionWillBegin(for: TransitionType, viewController: fromVC, userInfo: flatUserInfo)
+        transitionDestination?.destinationTransitionWillBegin(for: TransitionType, viewController: toVC, userInfo: flatUserInfo)
+
+        // Start animation
         let wasInteractive = transitionContext.isInteractive
-        UIView.animate(withDuration: animationDuration, animations: { 
+        let savedTransitionStyle = self.transitionStyle
+        UIView.animate(withDuration: animationDuration, animations: {
             if let fromView = fromView {
                 fromView.alpha = 0
 
-                if finalFromFrame != .zero {
+                if savedTransitionStyle == .modalPresentation && finalFromFrame != .zero {
                     fromView.frame = finalFromFrame
                 }
             }
 
-            if let toView = toView, finalToFrame != .zero {
+            if savedTransitionStyle == .modalPresentation, let toView = toView, finalToFrame != .zero {
                 toView.frame = finalToFrame
             }
 
@@ -109,7 +137,11 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
                 snapshotView.removeFromSuperview()
             }
 
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            let completed = !transitionContext.transitionWasCancelled
+            transitionSource?.sourceTransitionDidEnd(for: TransitionType, viewController: fromVC, userInfo: flatUserInfo, completed: completed)
+            transitionDestination?.destinationTransitionDidEnd(for: TransitionType, viewController: toVC, userInfo: flatUserInfo, completed: completed)
+
+            transitionContext.completeTransition(completed)
         })
     }
 }

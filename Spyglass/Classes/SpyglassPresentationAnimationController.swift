@@ -8,13 +8,12 @@
 
 import UIKit
 
+private let TransitionType = SpyglassTransitionType.presentation
+
 public class SpyglassPresentationAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     public var animationDuration = TimeInterval(0.3)
-
-    var transitionType: SpyglassTransitionType {
-        return .presentation
-    }
-
+    public var transitionStyle = SpyglassTransitionStyle.navigation
+    
     // MARK: - Animated Transitioning
 
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -38,8 +37,16 @@ public class SpyglassPresentationAnimationController: NSObject, UIViewController
         let toView = transitionContext.view(forKey: .to)
 
         if let fromView = fromView {
-            if initialFromFrame != .zero {
-                fromView.frame = initialFromFrame
+            switch transitionStyle {
+            case .navigation:
+                if finalFromFrame != .zero {
+                    fromView.frame = finalFromFrame
+                }
+
+            case .modalPresentation:
+                if initialFromFrame != .zero {
+                    fromView.frame = initialFromFrame
+                }
             }
 
             containerView.addSubview(fromView)
@@ -48,8 +55,16 @@ public class SpyglassPresentationAnimationController: NSObject, UIViewController
         if let toView = toView {
             toView.alpha = 0
 
-            if initialToFrame != .zero {
-                toView.frame = initialToFrame
+            switch transitionStyle {
+            case .navigation:
+                if finalToFrame != .zero {
+                    toView.frame = finalToFrame
+                }
+
+            case .modalPresentation:
+                if initialToFrame != .zero {
+                    toView.frame = initialToFrame
+                }
             }
 
             containerView.addSubview(toView)
@@ -62,15 +77,15 @@ public class SpyglassPresentationAnimationController: NSObject, UIViewController
         let transitionDestination = findTransitionDestination(for: toVC)
 
         // Get snapshotView
-        let userInfo: [String: Any]??
+        let userInfo: SpyglassUserInfo??
         let snapshotView: UIView?
         let snapshotSourceRect: SpyglassRelativeRect?
         let snapshotDestinationRect: SpyglassRelativeRect?
 
         if let source = transitionSource, transitionDestination != nil {
-            let _userInfo = source.userInfo(for: transitionType, from: fromVC, to: toVC)
-            snapshotView = source.snapshotView(for: transitionType, userInfo: _userInfo)
-            snapshotSourceRect = source.sourceRect(for: transitionType, userInfo: _userInfo)
+            let _userInfo = source.userInfo(for: TransitionType, from: fromVC, to: toVC)
+            snapshotView = source.snapshotView(for: TransitionType, userInfo: _userInfo)
+            snapshotSourceRect = source.sourceRect(for: TransitionType, userInfo: _userInfo)
             userInfo = _userInfo
         } else {
             snapshotView = nil
@@ -79,7 +94,7 @@ public class SpyglassPresentationAnimationController: NSObject, UIViewController
         }
 
         if let destination = transitionDestination, let userInfo = userInfo {
-            snapshotDestinationRect = destination.destinationRect(for: transitionType, userInfo: userInfo)
+            snapshotDestinationRect = destination.destinationRect(for: TransitionType, userInfo: userInfo)
         } else {
             snapshotDestinationRect = nil
         }
@@ -89,15 +104,27 @@ public class SpyglassPresentationAnimationController: NSObject, UIViewController
             containerView.addSubview(snapshotView)
         }
 
-        UIView.animate(withDuration: animationDuration, animations: { 
-            if let fromView = fromView, finalFromFrame != .zero {
+        // Notify source / destination about transition start
+        let flatUserInfo: SpyglassUserInfo?
+        if let userInfo = userInfo {
+            flatUserInfo = userInfo
+        } else {
+            flatUserInfo = nil
+        }
+
+        transitionSource?.sourceTransitionWillBegin(for: TransitionType, viewController: fromVC, userInfo: flatUserInfo)
+        transitionDestination?.destinationTransitionWillBegin(for: TransitionType, viewController: toVC, userInfo: flatUserInfo)
+
+        let savedTransitionStyle = self.transitionStyle
+        UIView.animate(withDuration: animationDuration, animations: {
+            if savedTransitionStyle == .modalPresentation, let fromView = fromView, finalFromFrame != .zero {
                 fromView.frame = finalFromFrame
             }
 
             if let toView = toView {
                 toView.alpha = 1
 
-                if finalToFrame != .zero {
+                if savedTransitionStyle == .modalPresentation, finalToFrame != .zero {
                     toView.frame = finalToFrame
                 }
             }
@@ -107,7 +134,12 @@ public class SpyglassPresentationAnimationController: NSObject, UIViewController
             }
         }, completion: { _ in
             snapshotView?.removeFromSuperview()
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+
+            let completed = !transitionContext.transitionWasCancelled
+            transitionSource?.sourceTransitionDidEnd(for: TransitionType, viewController: fromVC, userInfo: flatUserInfo, completed: completed)
+            transitionDestination?.destinationTransitionDidEnd(for: TransitionType, viewController: toVC, userInfo: flatUserInfo, completed: completed)
+
+            transitionContext.completeTransition(completed)
         })
     }
 }

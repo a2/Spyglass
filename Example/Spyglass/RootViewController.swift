@@ -76,7 +76,7 @@ class RootViewController: UICollectionViewController, SpyglassTransitionSource, 
 
     // MARK: - Transition Source
 
-    func userInfo(for transitionType: SpyglassTransitionType, from initialViewController: UIViewController, to finalViewController: UIViewController) -> [String: Any]? {
+    func userInfo(for transitionType: SpyglassTransitionType, from initialViewController: UIViewController, to finalViewController: UIViewController) -> SpyglassUserInfo? {
         let pageViewController: UIPageViewController
         switch transitionType {
         case .presentation:
@@ -86,14 +86,26 @@ class RootViewController: UICollectionViewController, SpyglassTransitionSource, 
         }
 
         let colorViewController = pageViewController.viewControllers![0] as! ColorViewController
+
+        let color = colorViewController.color!
+        let index = colorViewController.index!
+        let rect = SpyglassRelativeRect(view: colorViewController.colorView)
+
+        if transitionType == .dismissal {
+            let rootViewController = finalViewController as! RootViewController
+            let indexPath = IndexPath(item: index, section: 0)
+            let frame = rootViewController.collectionView!.layoutAttributesForItem(at: indexPath)!.frame
+            rootViewController.collectionView!.scrollRectToVisible(frame, animated: false)
+        }
+
         return [
-            SpyglassUserInfoColorKey: colorViewController.color!,
-            SpyglassUserInfoIndexKey: colorViewController.index!,
-            SpyglassUserInfoRectKey: SpyglassRelativeRect(view: colorViewController.colorView),
+            SpyglassUserInfoColorKey: color,
+            SpyglassUserInfoIndexKey: index,
+            SpyglassUserInfoRectKey: rect,
         ]
     }
 
-    func snapshotView(for transitionType: SpyglassTransitionType, userInfo: [String: Any]?) -> UIView {
+    func snapshotView(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> UIView {
         let view = UIView()
         view.backgroundColor = userInfo?[SpyglassUserInfoColorKey] as? UIColor ?? .black
         return view
@@ -105,7 +117,7 @@ class RootViewController: UICollectionViewController, SpyglassTransitionSource, 
         return SpyglassRelativeRect(view: cell)
     }
 
-    func sourceRect(for transitionType: SpyglassTransitionType, userInfo: [String: Any]?) -> SpyglassRelativeRect {
+    func sourceRect(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> SpyglassRelativeRect {
         switch transitionType {
         case .presentation:
             let index = userInfo![SpyglassUserInfoIndexKey] as! Int
@@ -116,9 +128,42 @@ class RootViewController: UICollectionViewController, SpyglassTransitionSource, 
         }
     }
 
+    func sourceTransitionWillBegin(for transitionType: SpyglassTransitionType, viewController: UIViewController, userInfo: SpyglassUserInfo?) {
+        switch transitionType {
+        case .presentation:
+            // rootViewController === self
+            let rootViewController = viewController as! RootViewController
+
+            let index = userInfo![SpyglassUserInfoIndexKey] as! Int
+            let indexPath = IndexPath(item: index, section: 0)
+            if let cell = rootViewController.collectionView?.cellForItem(at: indexPath) {
+                cell.isHidden = true
+            }
+
+        case .dismissal:
+            let pageViewController = viewController as! UIPageViewController
+            let colorViewController = pageViewController.viewControllers![0] as! ColorViewController
+            colorViewController.colorView.isHidden = true
+        }
+    }
+
+    func sourceTransitionDidEnd(for transitionType: SpyglassTransitionType, viewController: UIViewController, userInfo: SpyglassUserInfo?, completed: Bool) {
+        switch transitionType {
+        case .presentation:
+            // rootViewController === self
+            let rootViewController = viewController as! RootViewController
+            rootViewController.collectionView?.visibleCells.forEach { $0.isHidden = false }
+
+        case .dismissal:
+            let pageViewController = viewController as! UIPageViewController
+            let colorViewController = pageViewController.viewControllers![0] as! ColorViewController
+            colorViewController.colorView.isHidden = false
+        }
+    }
+
     // MARK: - Transition Destination
 
-    func destinationRect(for transitionType: SpyglassTransitionType, userInfo: [String: Any]?) -> SpyglassRelativeRect {
+    func destinationRect(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> SpyglassRelativeRect {
         switch transitionType {
         case .presentation:
             return userInfo![SpyglassUserInfoRectKey] as! SpyglassRelativeRect
@@ -126,6 +171,39 @@ class RootViewController: UICollectionViewController, SpyglassTransitionSource, 
         case .dismissal:
             let index = userInfo![SpyglassUserInfoIndexKey] as! Int
             return cellRect(atIndex: index)
+        }
+    }
+
+    func destinationTransitionWillBegin(for transitionType: SpyglassTransitionType, viewController: UIViewController, userInfo: SpyglassUserInfo?) {
+        switch transitionType {
+        case .presentation:
+            let pageViewController = viewController as! UIPageViewController
+            let colorViewController = pageViewController.viewControllers![0] as! ColorViewController
+            colorViewController.colorView.isHidden = true
+
+        case .dismissal:
+            // rootViewController === self
+            let rootViewController = viewController as! RootViewController
+
+            let index = userInfo![SpyglassUserInfoIndexKey] as! Int
+            let indexPath = IndexPath(item: index, section: 0)
+            if let cell = rootViewController.collectionView?.cellForItem(at: indexPath) {
+                cell.isHidden = true
+            }
+        }
+    }
+
+    func destinationTransitionDidEnd(for transitionType: SpyglassTransitionType, viewController: UIViewController, userInfo: SpyglassUserInfo?, completed: Bool) {
+        switch transitionType {
+        case .presentation:
+            let pageViewController = viewController as! UIPageViewController
+            let colorViewController = pageViewController.viewControllers![0] as! ColorViewController
+            colorViewController.colorView.isHidden = false
+
+        case .dismissal:
+            // rootViewController === self
+            let rootViewController = viewController as! RootViewController
+            rootViewController.collectionView?.visibleCells.forEach { $0.isHidden = false }
         }
     }
 }

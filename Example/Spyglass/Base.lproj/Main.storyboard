@@ -12,7 +12,7 @@
             <objects>
                 <collectionViewController id="Qyi-Sn-b1R" customClass="RootViewController" customModule="Spyglass_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="2jO-LA-f5n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Sl-TC-4dK">
@@ -51,35 +51,27 @@
                         <viewControllerLayoutGuide type="bottom" id="h4w-hJ-M6Z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VNI-tV-OWN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBp-Vc-2rU" userLabel="Top Spacer View">
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Gi-lf-Hru">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1Gi-lf-Hru" secondAttribute="height" multiplier="1:1" id="gRS-kT-iEV"/>
-                                </constraints>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n42-jT-lkD" userLabel="Bottom Spacer View">
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YCt-2H-wlC">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Gi-lf-Hru">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1Gi-lf-Hru" secondAttribute="height" multiplier="1:1" id="EAB-Zb-3K7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="vertical"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="n42-jT-lkD" secondAttribute="trailing" constant="20" id="0BG-nN-QJi"/>
-                            <constraint firstItem="1Gi-lf-Hru" firstAttribute="top" secondItem="vBp-Vc-2rU" secondAttribute="bottom" id="54h-5h-Xtv"/>
-                            <constraint firstAttribute="trailing" secondItem="vBp-Vc-2rU" secondAttribute="trailing" constant="20" id="5Y6-G4-VOP"/>
-                            <constraint firstItem="vBp-Vc-2rU" firstAttribute="leading" secondItem="VNI-tV-OWN" secondAttribute="leading" constant="20" id="6ZL-27-Ixr"/>
-                            <constraint firstItem="h4w-hJ-M6Z" firstAttribute="top" secondItem="n42-jT-lkD" secondAttribute="bottom" constant="20" id="7rl-8n-OQj"/>
-                            <constraint firstItem="n42-jT-lkD" firstAttribute="top" secondItem="1Gi-lf-Hru" secondAttribute="bottom" id="B7a-CS-tME"/>
-                            <constraint firstItem="n42-jT-lkD" firstAttribute="leading" secondItem="VNI-tV-OWN" secondAttribute="leading" constant="20" id="SkK-Ec-HON"/>
-                            <constraint firstItem="n42-jT-lkD" firstAttribute="height" secondItem="vBp-Vc-2rU" secondAttribute="height" id="VHB-cF-VwY"/>
-                            <constraint firstItem="1Gi-lf-Hru" firstAttribute="leading" secondItem="VNI-tV-OWN" secondAttribute="leading" constant="20" id="nz3-em-uzW"/>
-                            <constraint firstAttribute="trailing" secondItem="1Gi-lf-Hru" secondAttribute="trailing" constant="20" id="qbh-de-2m9"/>
-                            <constraint firstItem="vBp-Vc-2rU" firstAttribute="top" secondItem="fo1-lZ-VLC" secondAttribute="bottom" constant="20" id="rkP-h9-7lT"/>
+                            <constraint firstItem="h4w-hJ-M6Z" firstAttribute="top" secondItem="YCt-2H-wlC" secondAttribute="bottom" constant="20" id="atO-T8-cxb"/>
+                            <constraint firstItem="YCt-2H-wlC" firstAttribute="leading" secondItem="VNI-tV-OWN" secondAttribute="leading" constant="20" id="idm-Ap-sVm"/>
+                            <constraint firstItem="YCt-2H-wlC" firstAttribute="top" secondItem="fo1-lZ-VLC" secondAttribute="bottom" constant="20" id="lfc-EW-97G"/>
+                            <constraint firstAttribute="trailing" secondItem="YCt-2H-wlC" secondAttribute="trailing" constant="20" id="v30-XI-FNv"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -89,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jN-CI-i9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="139"/>
+            <point key="canvasLocation" x="1731.1844077961021" y="138.40000000000001"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ixv-tF-pou">

@@ -1,5 +1,5 @@
 //
-//  SpyglassTransitionType.swift
+//  Enums.swift
 //  Spyglass
 //
 //  Created by Alexsander Akers on 09/03/2016.
@@ -11,4 +11,9 @@ import Foundation
 public enum SpyglassTransitionType {
     case presentation
     case dismissal
+}
+
+public enum SpyglassTransitionStyle {
+    case navigation
+    case modalPresentation
 }
