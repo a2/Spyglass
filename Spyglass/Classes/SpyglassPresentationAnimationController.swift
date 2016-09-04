@@ -29,10 +29,10 @@ public class SpyglassPresentationAnimationController: NSObject, UIViewController
         let toVC = transitionContext.viewController(forKey: .to)!
 
         let initialFromFrame = transitionContext.initialFrame(for: fromVC)
-        let finalFromFrame = transitionContext.initialFrame(for: fromVC)
+        let finalFromFrame = transitionContext.finalFrame(for: fromVC)
 
         let initialToFrame = transitionContext.initialFrame(for: toVC)
-        let finalToFrame = transitionContext.initialFrame(for: toVC)
+        let finalToFrame = transitionContext.finalFrame(for: toVC)
 
         let fromView = transitionContext.view(forKey: .from)
         let toView = transitionContext.view(forKey: .to)
