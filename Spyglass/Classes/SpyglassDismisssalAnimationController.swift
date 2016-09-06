@@ -11,13 +11,13 @@ import UIKit
 private let TransitionType = SpyglassTransitionType.dismissal
 
 public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-    public var animationDuration = TimeInterval(0.3)
+    public var animator: SpyglassAnimator = SpyglassDefaultAnimator(duration: 0.3)
     public var transitionStyle = SpyglassTransitionStyle.navigation
 
     // MARK: - Animated Transitioning
 
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return animationDuration
+        return animator.totalDuration
     }
 
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -116,7 +116,7 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
         // Start animation
         let wasInteractive = transitionContext.isInteractive
         let savedTransitionStyle = self.transitionStyle
-        UIView.animate(withDuration: animationDuration, animations: {
+        animator.perform(animations: {
             if let fromView = fromView {
                 fromView.alpha = 0
 

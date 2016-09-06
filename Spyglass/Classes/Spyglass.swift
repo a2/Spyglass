@@ -13,10 +13,8 @@ public class Spyglass: NSObject, UINavigationControllerDelegate {
         switch operation {
         case .push:
             return SpyglassPresentationAnimationController()
-
         case .pop:
             return SpyglassDismissalAnimationController()
-
         default:
             return nil
         }
