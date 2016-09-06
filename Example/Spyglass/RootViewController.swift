@@ -37,7 +37,9 @@ class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTr
         super.viewDidLoad()
 
         colors = makeColors()
+
         collectionViewDataSource = CollectionViewDataSource(colors: colors, cellReuseIdentifier: DefaultCellIdentifier)
+        collectionView.dataSource = collectionViewDataSource
     }
 
     // MARK: - Collection View
