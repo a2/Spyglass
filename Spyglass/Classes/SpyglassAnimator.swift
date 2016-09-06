@@ -41,6 +41,14 @@ public struct SpyglassSpringAnimator: SpyglassAnimator {
     public var initialSpringVelocity: CGFloat
     public var options: UIViewAnimationOptions
 
+    public init(duration: TimeInterval, delay: TimeInterval = 0, springDamping: CGFloat, initialSpringVelocity: CGFloat, options: UIViewAnimationOptions = []) {
+        self.duration = duration
+        self.delay = delay
+        self.springDamping = springDamping
+        self.initialSpringVelocity = initialSpringVelocity
+        self.options = options
+    }
+
     public var totalDuration: TimeInterval {
         return delay + duration
     }
