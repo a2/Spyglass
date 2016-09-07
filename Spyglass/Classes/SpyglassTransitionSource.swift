@@ -2,7 +2,7 @@
 //  SpyglassTransitionSource.swift
 //  Spyglass
 //
-//  Created by Alexsander Akers on 09/03/2016.
+//  Created by Alexsander Akers on 9/3/2016.
 //  Copyright © 2016 Pandamonia LLC. All rights reserved.
 //
 

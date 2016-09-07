@@ -2,7 +2,7 @@
 //  SpyglassAnimator.swift
 //  Spyglass
 //
-//  Created by Alexsander Akers on 09/06/2016.
+//  Created by Alexsander Akers on 9/6/2016.
 //  Copyright © 2016 Pandamonia LLC. All rights reserved.
 //
 
