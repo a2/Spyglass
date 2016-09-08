@@ -8,19 +8,49 @@
 
 import UIKit
 
-public class Spyglass: NSObject, UINavigationControllerDelegate {
+public class Spyglass: NSObject, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
+    // MARK: - Navigation Controller
+
     public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         switch operation {
         case .push:
-            return SpyglassPresentationAnimationController()
+            let animationController = SpyglassPresentationAnimationController()
+            animationController.transitionStyle = .navigation
+            return animationController
+
         case .pop:
-            return SpyglassDismissalAnimationController()
+            let animationController = SpyglassDismissalAnimationController()
+            animationController.transitionStyle = .navigation
+            return animationController
+
         default:
             return nil
         }
     }
 
     public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return nil
+    }
+
+    // MARK: - View Controller
+
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animationController = SpyglassPresentationAnimationController()
+        animationController.transitionStyle = .modalPresentation
+        return animationController
+    }
+
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animationController = SpyglassDismissalAnimationController()
+        animationController.transitionStyle = .modalPresentation
+        return animationController
+    }
+
+    public func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return nil
+    }
+
+    public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return nil
     }
 }

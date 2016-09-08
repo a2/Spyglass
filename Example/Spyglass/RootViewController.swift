@@ -11,7 +11,7 @@ import UIKit
 
 private let DefaultCellIdentifier = "DefaultCell"
 
-class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTransitionSource, SpyglassTransitionDestination, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class RootViewController: UIViewController, ColorViewControllerDelegate, SpyglassTransitionSource, SpyglassTransitionDestination, UICollectionViewDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     @IBOutlet var collectionView: UICollectionView!
 
     var colors: [UIColor]!
@@ -26,9 +26,30 @@ class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTr
 
     func makeColorViewController(atIndex index: Int) -> ColorViewController {
         let colorViewController = storyboard!.instantiateViewController(withIdentifier: "ColorViewController") as! ColorViewController
-        colorViewController.index = index
         colorViewController.color = colors[index]
+        colorViewController.delegate = self
+        colorViewController.index = index
         return colorViewController
+    }
+
+    func findRootViewController(in viewController: UIViewController) -> RootViewController? {
+        if let navigationController = viewController as? UINavigationController, let rootViewController = navigationController.topViewController as? RootViewController {
+            return rootViewController
+        } else if let rootViewController = viewController as? RootViewController {
+            return rootViewController
+        } else {
+            return nil
+        }
+    }
+
+    // MARK: - Color View Controller
+
+    func colorViewControllerDidTapColorView(colorViewController: ColorViewController) {
+        guard presentedViewController != nil else {
+            return
+        }
+
+        dismiss(animated: true)
     }
 
     // MARK: - View Life Cycle
@@ -53,7 +74,10 @@ class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTr
         pageViewController.setViewControllers([colorViewController], direction: .forward, animated: false, completion: nil)
         pageViewController.navigationItem.title = colorViewController.navigationItem.title
 
-        navigationController!.pushViewController(pageViewController, animated: true)
+        // navigationController!.pushViewController(pageViewController, animated: true)
+
+        pageViewController.transitioningDelegate = (navigationController?.delegate as! UIViewControllerTransitioningDelegate)
+        present(pageViewController, animated: true)
     }
 
     // MARK: - Page View Controller
@@ -96,7 +120,7 @@ class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTr
         let rect = SpyglassRelativeRect(view: colorViewController.colorView)
 
         if transitionType == .dismissal {
-            let rootViewController = finalViewController as! RootViewController
+            let rootViewController = findRootViewController(in: finalViewController)!
             let indexPath = IndexPath(item: index, section: 0)
             let frame = rootViewController.collectionView.layoutAttributesForItem(at: indexPath)!.frame
             rootViewController.collectionView.scrollRectToVisible(frame, animated: false)
@@ -136,7 +160,7 @@ class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTr
         switch transitionType {
         case .presentation:
             // rootViewController === self
-            let rootViewController = viewController as! RootViewController
+            let rootViewController = findRootViewController(in: viewController)!
 
             let index = userInfo![SpyglassUserInfoIndexKey] as! Int
             let indexPath = IndexPath(item: index, section: 0)
@@ -155,7 +179,7 @@ class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTr
         switch transitionType {
         case .presentation:
             // rootViewController === self
-            let rootViewController = viewController as! RootViewController
+            let rootViewController = findRootViewController(in: viewController)!
             rootViewController.collectionView?.visibleCells.forEach { $0.isHidden = false }
 
         case .dismissal:
@@ -187,7 +211,7 @@ class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTr
 
         case .dismissal:
             // rootViewController === self
-            let rootViewController = viewController as! RootViewController
+            let rootViewController = findRootViewController(in: viewController)!
 
             let index = userInfo![SpyglassUserInfoIndexKey] as! Int
             let indexPath = IndexPath(item: index, section: 0)
@@ -206,7 +230,7 @@ class RootViewController: UIViewController, UICollectionViewDelegate, SpyglassTr
 
         case .dismissal:
             // rootViewController === self
-            let rootViewController = viewController as! RootViewController
+            let rootViewController = findRootViewController(in: viewController)!
             rootViewController.collectionView?.visibleCells.forEach { $0.isHidden = false }
         }
     }

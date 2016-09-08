@@ -11,13 +11,20 @@ import UIKit
 
 class ColorViewController: UIViewController {
     @IBOutlet var colorView: UIView!
-    
+
+    weak var delegate: ColorViewControllerDelegate?
     var index: Int?
     var color: UIColor? {
         didSet {
             colorView?.backgroundColor = color
             navigationItem.title = color?.hexValue
         }
+    }
+
+    // MARK: - Actions
+
+    @IBAction func colorViewTapped(sender: AnyObject?) {
+        delegate?.colorViewControllerDidTapColorView(colorViewController: self)
     }
 
     // MARK: - View Life Cycle
@@ -27,4 +34,8 @@ class ColorViewController: UIViewController {
 
         colorView.backgroundColor = color
     }
+}
+
+protocol ColorViewControllerDelegate: class {
+    func colorViewControllerDidTapColorView(colorViewController: ColorViewController)
 }
