@@ -11,7 +11,7 @@ import UIKit
 public protocol SpyglassAnimator {
     var totalDuration: TimeInterval { get }
 
-    func perform(animations: @escaping () -> Void, completion: (@escaping (Bool) -> Void)?)
+    func perform(animations: @escaping () -> Void, completion: ((Bool) -> Void)?)
 }
 
 public struct SpyglassDefaultAnimator: SpyglassAnimator {
@@ -29,7 +29,7 @@ public struct SpyglassDefaultAnimator: SpyglassAnimator {
         return delay + duration
     }
 
-    public func perform(animations: @escaping () -> Void, completion: (@escaping (Bool) -> Void)?) {
+    public func perform(animations: @escaping () -> Void, completion: ((Bool) -> Void)?) {
         UIView.animate(withDuration: duration, delay: delay, options: options, animations: animations, completion: completion)
     }
 }
@@ -53,7 +53,7 @@ public struct SpyglassSpringAnimator: SpyglassAnimator {
         return delay + duration
     }
 
-    public func perform(animations: @escaping () -> Void, completion: (@escaping (Bool) -> Void)?) {
+    public func perform(animations: @escaping () -> Void, completion: ((Bool) -> Void)?) {
         UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: springDamping, initialSpringVelocity: initialSpringVelocity, options: options, animations: animations, completion: completion)
     }
 }
