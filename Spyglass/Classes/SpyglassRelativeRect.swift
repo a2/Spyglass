@@ -13,14 +13,17 @@ public struct SpyglassRelativeRect {
     fileprivate let rect: CGRect
 
     public init(rect: CGRect, relativeTo view: UIView) {
+        assert(view.window != nil)
         self.rect = view.convert(rect, to: nil)
     }
 
     public init(view: UIView) {
+        assert(view.window != nil)
         self.rect = view.convert(view.bounds, to: nil)
     }
 
     public func frame(relativeTo view: UIView) -> CGRect {
+        assert(view.window != nil)
         return view.convert(rect, from: nil)
     }
 }
