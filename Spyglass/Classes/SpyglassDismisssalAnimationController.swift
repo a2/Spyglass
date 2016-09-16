@@ -8,11 +8,12 @@
 
 import UIKit
 
-private let TransitionType = SpyglassTransitionType.dismissal
-
-public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
+public class SpyglassDismissalAnimationController: NSObject, SpyglassAnimationController {
     public var animator: SpyglassAnimator = SpyglassDefaultAnimator(duration: 0.3)
     public var transitionStyle = SpyglassTransitionStyle.navigation
+    public let transitionType = SpyglassTransitionType.dismissal
+
+    public private(set) var context: SpyglassAnimationContext?
 
     // MARK: - Animated Transitioning
 
@@ -81,10 +82,10 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
         let snapshotDestinationRect: SpyglassRelativeRect?
 
         if let source = transitionSource, transitionDestination != nil {
-            let _userInfo = source.userInfo(for: TransitionType, from: fromVC, to: toVC)
-            snapshotView = source.snapshotView(for: TransitionType, userInfo: _userInfo)
-            snapshotSourceRect = source.sourceRect(for: TransitionType, userInfo: _userInfo)
-            userInfo = _userInfo
+            let _userInfo = source.userInfo(for: transitionType, from: fromVC, to: toVC)
+            snapshotView = source.snapshotView(for: transitionType, userInfo: _userInfo)
+            snapshotSourceRect = source.sourceRect(for: transitionType, userInfo: _userInfo)
+            userInfo = .some(_userInfo)
         } else {
             snapshotView = nil
             snapshotSourceRect = nil
@@ -92,7 +93,7 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
         }
 
         if let destination = transitionDestination, let userInfo = userInfo {
-            snapshotDestinationRect = destination.destinationRect(for: TransitionType, userInfo: userInfo)
+            snapshotDestinationRect = destination.destinationRect(for: transitionType, userInfo: userInfo)
         } else {
             snapshotDestinationRect = nil
         }
@@ -100,6 +101,12 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
         if let snapshotView = snapshotView, let sourceRect = snapshotSourceRect, snapshotDestinationRect != nil {
             snapshotView.frame = sourceRect.frame(relativeTo: containerView)
             containerView.addSubview(snapshotView)
+        }
+
+        if let source = transitionSource, let destination = transitionDestination, let snapshotView = snapshotView, let sourceRect = snapshotSourceRect, let destinationRect = snapshotDestinationRect, let userInfo = userInfo {
+            context = SpyglassAnimationContext(source: source, destination: destination, userInfo: userInfo, snapshotView: snapshotView, snapshotSourceRect: sourceRect, snapshotDestinationRect: destinationRect)
+        } else {
+            context = nil
         }
 
         // Notify source / destination about transition start
@@ -110,8 +117,8 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
             flatUserInfo = nil
         }
 
-        transitionSource?.sourceTransitionWillBegin(for: TransitionType, viewController: fromVC, userInfo: flatUserInfo)
-        transitionDestination?.destinationTransitionWillBegin(for: TransitionType, viewController: toVC, userInfo: flatUserInfo)
+        transitionSource?.sourceTransitionWillBegin(for: transitionType, viewController: fromVC, userInfo: flatUserInfo)
+        transitionDestination?.destinationTransitionWillBegin(for: transitionType, viewController: toVC, userInfo: flatUserInfo)
 
         // Start animation
         let wasInteractive = transitionContext.isInteractive
@@ -138,10 +145,14 @@ public class SpyglassDismissalAnimationController: NSObject, UIViewControllerAni
             }
 
             let completed = !transitionContext.transitionWasCancelled
-            transitionSource?.sourceTransitionDidEnd(for: TransitionType, viewController: fromVC, userInfo: flatUserInfo, completed: completed)
-            transitionDestination?.destinationTransitionDidEnd(for: TransitionType, viewController: toVC, userInfo: flatUserInfo, completed: completed)
+            if !wasInteractive {
+                transitionSource?.sourceTransitionDidEnd(for: self.transitionType, viewController: fromVC, userInfo: flatUserInfo, completed: completed)
+                transitionDestination?.destinationTransitionDidEnd(for: self.transitionType, viewController: toVC, userInfo: flatUserInfo, completed: completed)
+            }
 
             transitionContext.completeTransition(completed)
+
+            self.context = nil
         })
     }
 }
