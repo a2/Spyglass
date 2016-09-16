@@ -74,10 +74,10 @@ class RootViewController: UIViewController, ColorViewControllerDelegate, Spyglas
         pageViewController.setViewControllers([colorViewController], direction: .forward, animated: false, completion: nil)
         pageViewController.navigationItem.title = colorViewController.navigationItem.title
 
-        // navigationController!.pushViewController(pageViewController, animated: true)
+        navigationController!.pushViewController(pageViewController, animated: true)
 
-        pageViewController.transitioningDelegate = (navigationController?.delegate as! UIViewControllerTransitioningDelegate)
-        present(pageViewController, animated: true)
+        // pageViewController.transitioningDelegate = (navigationController?.delegate as! UIViewControllerTransitioningDelegate)
+        // present(pageViewController, animated: true)
     }
 
     // MARK: - Page View Controller
