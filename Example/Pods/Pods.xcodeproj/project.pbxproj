@@ -7,45 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1534D8C6896BAD2F7EAA288DF655DB97 /* SpyglassAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164A0F776C59CC8A9F7A4EC9DB57E8C /* SpyglassAnimator.swift */; };
-		206E322CC6796A922EE0B818519659D3 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2405FF0F1EDDF095EA3B7E7D0DDD4877 /* Helpers.swift */; };
-		2C5A6B9B8EEDCE97395F186EA81FF865 /* SpyglassPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F005ED0310812F4957E72565001606 /* SpyglassPresentationAnimationController.swift */; };
-		2C8DC5667358959F37FD7A0A4690BA10 /* SpyglassUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CEDB0779E1D7FF6E02106BED7ECB4A /* SpyglassUserInfo.swift */; };
-		2F9C0C679B4F0AD52203951C89E14686 /* SpyglassAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA756B80FC4E8B444C7586DEAF613FBA /* SpyglassAnimationController.swift */; };
-		3DB6DAED4AFE0E817D8A47274611D5E8 /* SpyglassDismisssalAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D814BA5D738BCA32248C8BA294A88AEF /* SpyglassDismisssalAnimationController.swift */; };
-		465B671824637731FFBC57BFC07F4513 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		51E9DF11A82ACCD10448960BDF35100C /* SpyglassTransitionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B34E447BF8D4DC312F7C0C160016D0 /* SpyglassTransitionSource.swift */; };
-		56B1448A6D28ECB2071219D0FA67A3CF /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756C909D00F01FD9313CD5DF8EC9D68 /* Enums.swift */; };
-		5E3EA457F29351E729A38261D4E3EB74 /* Pods-Spyglass_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E677B49CEF0386289718E8F8B4A8AB /* Pods-Spyglass_Tests-dummy.m */; };
-		6F6BBD2B17D8B58A2FF9B0EBC515FEE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		7B8520AA1C8060CF2019499D23372FBF /* SpyglassTransitionDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA898CD2894B14CBC2CA71BD6681E60F /* SpyglassTransitionDestination.swift */; };
-		7F68282D3BF89BA51D80F50E33877D83 /* Spyglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CA33B426D5F4F7138D40CC92CE3409 /* Spyglass.swift */; };
-		8181EA60C2367299F9F03546F71835D7 /* Pods-Spyglass_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C59A116B36EBAA8CFE7D6797F48EF7C /* Pods-Spyglass_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82270B4957BDF348CB25C4C434F921AE /* Pods-Spyglass_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B7C31C732B7CD697B9F125FBA1019FE1 /* Pods-Spyglass_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8498E52E7C0AEE39D2E997A1D0C68630 /* Spyglass-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3BA0831A0A69BE531BCE00B90B63B0 /* Spyglass-dummy.m */; };
-		8E3AF469E38BA61A5FD3098BE255EA86 /* Spyglass-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97159F44085295B9692D14D2C2FAD7D1 /* Spyglass-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A131DE0FE0415303CA1A9C315B9EBC8D /* SpyglassInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC50F0EBFD27A36AEE3245F225F3143 /* SpyglassInteractionController.swift */; };
-		AB3F3BFE17F470E23686BF01D1CCE7C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		C549CF210E8EC528D1155191B623D502 /* Pods-Spyglass_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D08989B40718BB2ABE1295E8DF286FCE /* Pods-Spyglass_Example-dummy.m */; };
-		DD9FF62A4DFF52BD81E7671DFA4B584B /* SpyglassAnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7F676F362A3E73FDEAEE7FFA3BBBB /* SpyglassAnimationContext.swift */; };
-		F32A92ABDDFE38EAF07003E3196B313F /* SpyglassRelativeRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C4752F81948A5917F75D4A62FE7AF /* SpyglassRelativeRect.swift */; };
+		0517FC9456DA49B5AAF6B54E80DB045B /* SpyglassInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC50F0EBFD27A36AEE3245F225F3143 /* SpyglassInteractionController.swift */; };
+		1CF274494A482EAFEED071D70CB44124 /* SpyglassTransitionDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA898CD2894B14CBC2CA71BD6681E60F /* SpyglassTransitionDestination.swift */; };
+		22B65834FDFCE7456467AA03AF541AEF /* SpyglassAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164A0F776C59CC8A9F7A4EC9DB57E8C /* SpyglassAnimator.swift */; };
+		356D5CA9794EAAD45710705E91EEEC69 /* Pods-Spyglass_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B7C31C732B7CD697B9F125FBA1019FE1 /* Pods-Spyglass_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		387858EAE9B474F72AEFAE7AC60F04F6 /* SpyglassDismisssalAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D814BA5D738BCA32248C8BA294A88AEF /* SpyglassDismisssalAnimationController.swift */; };
+		41A63A96CD14BD6D68365C15E1E8DE9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		43613C3F8F3202CB0CB3A9344CFDE83C /* SpyglassTransitionSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B34E447BF8D4DC312F7C0C160016D0 /* SpyglassTransitionSource.swift */; };
+		686909342AEA9FDEB5DF08BEFC02A280 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		7E12E2FDFCED8AD1911CB65185E4A50C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2405FF0F1EDDF095EA3B7E7D0DDD4877 /* Helpers.swift */; };
+		8C139F3C41EDE32F342E355F3823DCC5 /* Pods-Spyglass_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C59A116B36EBAA8CFE7D6797F48EF7C /* Pods-Spyglass_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95D605486C74F778F3ED1CD9577E0C14 /* SpyglassUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CEDB0779E1D7FF6E02106BED7ECB4A /* SpyglassUserInfo.swift */; };
+		9C3F15E1451464CEBF96AA06BB6AADFC /* Spyglass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CA33B426D5F4F7138D40CC92CE3409 /* Spyglass.swift */; };
+		A05F212467A16DC0F4362E3B290537DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		ABBE535BAC010DF7A9D2F10AC41B30FB /* Spyglass-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97159F44085295B9692D14D2C2FAD7D1 /* Spyglass-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1E04C13DD9A0EDEEFF1152E32298F64 /* SpyglassAnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7F676F362A3E73FDEAEE7FFA3BBBB /* SpyglassAnimationContext.swift */; };
+		C1EF73D03B5282CE894BE3D68ADE1007 /* SpyglassRelativeRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235C4752F81948A5917F75D4A62FE7AF /* SpyglassRelativeRect.swift */; };
+		C5BD048D58FF332D047E7477318C76E8 /* Pods-Spyglass_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E677B49CEF0386289718E8F8B4A8AB /* Pods-Spyglass_Tests-dummy.m */; };
+		CEC2C2704CB36448932DE09C312275DB /* Pods-Spyglass_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D08989B40718BB2ABE1295E8DF286FCE /* Pods-Spyglass_Example-dummy.m */; };
+		D291DFF822F2D4F137C78AF43A5F1B9F /* SpyglassPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F005ED0310812F4957E72565001606 /* SpyglassPresentationAnimationController.swift */; };
+		F5BCCAA82CE3FB3894C7F7F54618382F /* SpyglassAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA756B80FC4E8B444C7586DEAF613FBA /* SpyglassAnimationController.swift */; };
+		FB297B4301C885FB237CFDCE367D2A9E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756C909D00F01FD9313CD5DF8EC9D68 /* Enums.swift */; };
+		FE3F4F67FF5E170C3AE152B272E3DBD3 /* Spyglass-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3BA0831A0A69BE531BCE00B90B63B0 /* Spyglass-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		17468B07DA5318AEED44765B39C37654 /* PBXContainerItemProxy */ = {
+		39CA1F13A63CFA5D84865F6FDBA63E52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B60822CAABD6C7B5013130FCED4FA817;
+			remoteGlobalIDString = 534FE7EBA5A6319823672B6DFBD01B41;
 			remoteInfo = Spyglass;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		07A1153EC04F88955DC87A67307CAD51 /* Spyglass.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spyglass.xcconfig; sourceTree = "<group>"; };
-		0D96EA4431B58E11CFB3343731316742 /* Pods_Spyglass_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spyglass_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D96EA4431B58E11CFB3343731316742 /* Pods_Spyglass_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Spyglass_Tests.framework; path = "Pods-Spyglass_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		119ED4E4E582C34D494401D7B8FEA333 /* Pods-Spyglass_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spyglass_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1854AE51F07043241367A163FA5A4972 /* Spyglass.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spyglass.modulemap; sourceTree = "<group>"; };
+		1854AE51F07043241367A163FA5A4972 /* Spyglass.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Spyglass.modulemap; sourceTree = "<group>"; };
 		1C59A116B36EBAA8CFE7D6797F48EF7C /* Pods-Spyglass_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spyglass_Tests-umbrella.h"; sourceTree = "<group>"; };
 		235C4752F81948A5917F75D4A62FE7AF /* SpyglassRelativeRect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpyglassRelativeRect.swift; sourceTree = "<group>"; };
 		2405FF0F1EDDF095EA3B7E7D0DDD4877 /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -56,13 +56,13 @@
 		5FC50F0EBFD27A36AEE3245F225F3143 /* SpyglassInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpyglassInteractionController.swift; sourceTree = "<group>"; };
 		71CA33B426D5F4F7138D40CC92CE3409 /* Spyglass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Spyglass.swift; sourceTree = "<group>"; };
 		766718CAB486ADF382022DFAE83BF3E0 /* Pods-Spyglass_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spyglass_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		79CB6176D4A95D4FA8FAE2AD60E5DCE9 /* Pods-Spyglass_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Spyglass_Example.modulemap"; sourceTree = "<group>"; };
+		79CB6176D4A95D4FA8FAE2AD60E5DCE9 /* Pods-Spyglass_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Spyglass_Example.modulemap"; sourceTree = "<group>"; };
 		81A7F676F362A3E73FDEAEE7FFA3BBBB /* SpyglassAnimationContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpyglassAnimationContext.swift; sourceTree = "<group>"; };
 		877B74B351B8721FC914711179A57345 /* Pods-Spyglass_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spyglass_Tests-resources.sh"; sourceTree = "<group>"; };
 		88F005ED0310812F4957E72565001606 /* SpyglassPresentationAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpyglassPresentationAnimationController.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		965D06B93F809EBDD6DC09A786BF462D /* Pods_Spyglass_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spyglass_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96ECEDCDF068FDAC3BCBDE24D4D1384C /* Spyglass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spyglass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		965D06B93F809EBDD6DC09A786BF462D /* Pods_Spyglass_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Spyglass_Example.framework; path = "Pods-Spyglass_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96ECEDCDF068FDAC3BCBDE24D4D1384C /* Spyglass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Spyglass.framework; path = Spyglass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97159F44085295B9692D14D2C2FAD7D1 /* Spyglass-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spyglass-umbrella.h"; sourceTree = "<group>"; };
 		9900019D8D07975A969F49EAB2609C55 /* Pods-Spyglass_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spyglass_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A756C909D00F01FD9313CD5DF8EC9D68 /* Enums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		E164A0F776C59CC8A9F7A4EC9DB57E8C /* SpyglassAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpyglassAnimator.swift; sourceTree = "<group>"; };
 		E72AE3E4C43287F348C915AC9841E0DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8B34E447BF8D4DC312F7C0C160016D0 /* SpyglassTransitionSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpyglassTransitionSource.swift; sourceTree = "<group>"; };
-		EC2CED42385E6458030596E5D12200AA /* Pods-Spyglass_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Spyglass_Tests.modulemap"; sourceTree = "<group>"; };
+		EC2CED42385E6458030596E5D12200AA /* Pods-Spyglass_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Spyglass_Tests.modulemap"; sourceTree = "<group>"; };
 		EE3BA0831A0A69BE531BCE00B90B63B0 /* Spyglass-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spyglass-dummy.m"; sourceTree = "<group>"; };
 		EE654F669986F7007304BE1C9AAA8390 /* Pods-Spyglass_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spyglass_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F0A763074DA1CB9B54D661A0701EA046 /* Pods-Spyglass_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spyglass_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,27 +89,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		401D69500A397661ACD414D49510C82B /* Frameworks */ = {
+		7390647F4639809AC35EB71C8362AC04 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				465B671824637731FFBC57BFC07F4513 /* Foundation.framework in Frameworks */,
+				686909342AEA9FDEB5DF08BEFC02A280 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FF42C32BD828CF7E618C854BE5A4840 /* Frameworks */ = {
+		E01371380497AFF81F669B0C832EB45F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB3F3BFE17F470E23686BF01D1CCE7C6 /* Foundation.framework in Frameworks */,
+				A05F212467A16DC0F4362E3B290537DA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACEAC9D4A9FB67221BD2483FB9AE9CF0 /* Frameworks */ = {
+		E91F17C86917686643F6FB6ADDE05E53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F6BBD2B17D8B58A2FF9B0EBC515FEE1 /* Foundation.framework in Frameworks */,
+				41A63A96CD14BD6D68365C15E1E8DE9C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +139,7 @@
 			children = (
 				D29BF8F04BFA646ABE800A2168F17E68 /* Classes */,
 			);
+			name = Spyglass;
 			path = Spyglass;
 			sourceTree = "<group>";
 		};
@@ -214,6 +215,7 @@
 				E8B34E447BF8D4DC312F7C0C160016D0 /* SpyglassTransitionSource.swift */,
 				E0CEDB0779E1D7FF6E02106BED7ECB4A /* SpyglassUserInfo.swift */,
 			);
+			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -261,75 +263,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		06C07B5874AFC177CA160B43B9168545 /* Headers */ = {
+		03DC27F998A15AAE06C12009292D7D2E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82270B4957BDF348CB25C4C434F921AE /* Pods-Spyglass_Example-umbrella.h in Headers */,
+				ABBE535BAC010DF7A9D2F10AC41B30FB /* Spyglass-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7429C459FAA1D4E09AD07DA4F86163BD /* Headers */ = {
+		1246C60A479802574DB1891DE118EE06 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E3AF469E38BA61A5FD3098BE255EA86 /* Spyglass-umbrella.h in Headers */,
+				356D5CA9794EAAD45710705E91EEEC69 /* Pods-Spyglass_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C43239A8B188FCF441713A2B8E2413E5 /* Headers */ = {
+		785A7CDD0BB668383E102153E0A497F6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8181EA60C2367299F9F03546F71835D7 /* Pods-Spyglass_Tests-umbrella.h in Headers */,
+				8C139F3C41EDE32F342E355F3823DCC5 /* Pods-Spyglass_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		18ABBB23CC21E3E0B5F6157823D0844A /* Pods-Spyglass_Tests */ = {
+		534FE7EBA5A6319823672B6DFBD01B41 /* Spyglass */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D1C5F519AB9009BA8684792216700164 /* Build configuration list for PBXNativeTarget "Pods-Spyglass_Tests" */;
+			buildConfigurationList = 69885C3C7A3DE52BB9D800D75940B9C8 /* Build configuration list for PBXNativeTarget "Spyglass" */;
 			buildPhases = (
-				5A5C8CDE1CA554E2E5DE61947FFF830E /* Sources */,
-				ACEAC9D4A9FB67221BD2483FB9AE9CF0 /* Frameworks */,
-				C43239A8B188FCF441713A2B8E2413E5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-Spyglass_Tests";
-			productName = "Pods-Spyglass_Tests";
-			productReference = 0D96EA4431B58E11CFB3343731316742 /* Pods_Spyglass_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		701BE309F049646F4EDDCC61C5FC51CD /* Pods-Spyglass_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5A548629B8D5840B68B3F37710405265 /* Build configuration list for PBXNativeTarget "Pods-Spyglass_Example" */;
-			buildPhases = (
-				12DEDA18D2BFE8A932028466DA317322 /* Sources */,
-				401D69500A397661ACD414D49510C82B /* Frameworks */,
-				06C07B5874AFC177CA160B43B9168545 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B82B812D4B6459AB37C9B6725317B973 /* PBXTargetDependency */,
-			);
-			name = "Pods-Spyglass_Example";
-			productName = "Pods-Spyglass_Example";
-			productReference = 965D06B93F809EBDD6DC09A786BF462D /* Pods_Spyglass_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		B60822CAABD6C7B5013130FCED4FA817 /* Spyglass */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 27D2E07BCA03D7EBD10DDFD891E819C0 /* Build configuration list for PBXNativeTarget "Spyglass" */;
-			buildPhases = (
-				2DEFA529C83A93A6549BF9F4003A0F67 /* Sources */,
-				7FF42C32BD828CF7E618C854BE5A4840 /* Frameworks */,
-				7429C459FAA1D4E09AD07DA4F86163BD /* Headers */,
+				7E27B2033FD0D46D43995B4D182E85DF /* Sources */,
+				7390647F4639809AC35EB71C8362AC04 /* Frameworks */,
+				03DC27F998A15AAE06C12009292D7D2E /* Headers */,
 			);
 			buildRules = (
 			);
@@ -338,6 +305,41 @@
 			name = Spyglass;
 			productName = Spyglass;
 			productReference = 96ECEDCDF068FDAC3BCBDE24D4D1384C /* Spyglass.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		659B181C269875970A39EA5A615DCB2F /* Pods-Spyglass_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA39990B2F7E436CEAA6121065CA5341 /* Build configuration list for PBXNativeTarget "Pods-Spyglass_Example" */;
+			buildPhases = (
+				B4D0DE43A914752EC39137B82770E13B /* Sources */,
+				E01371380497AFF81F669B0C832EB45F /* Frameworks */,
+				1246C60A479802574DB1891DE118EE06 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C53E11D173AF26E96ECECE47D7D077E /* PBXTargetDependency */,
+			);
+			name = "Pods-Spyglass_Example";
+			productName = "Pods-Spyglass_Example";
+			productReference = 965D06B93F809EBDD6DC09A786BF462D /* Pods_Spyglass_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		74821A7482E1FCF93CA6D75A0CC240FD /* Pods-Spyglass_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CE10B928B0AF41A6FC344004E970C1F /* Build configuration list for PBXNativeTarget "Pods-Spyglass_Tests" */;
+			buildPhases = (
+				A144CEAB12C48EFA80C6794B58E7572A /* Sources */,
+				E91F17C86917686643F6FB6ADDE05E53 /* Frameworks */,
+				785A7CDD0BB668383E102153E0A497F6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Spyglass_Tests";
+			productName = "Pods-Spyglass_Tests";
+			productReference = 0D96EA4431B58E11CFB3343731316742 /* Pods_Spyglass_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -361,64 +363,64 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				701BE309F049646F4EDDCC61C5FC51CD /* Pods-Spyglass_Example */,
-				18ABBB23CC21E3E0B5F6157823D0844A /* Pods-Spyglass_Tests */,
-				B60822CAABD6C7B5013130FCED4FA817 /* Spyglass */,
+				659B181C269875970A39EA5A615DCB2F /* Pods-Spyglass_Example */,
+				74821A7482E1FCF93CA6D75A0CC240FD /* Pods-Spyglass_Tests */,
+				534FE7EBA5A6319823672B6DFBD01B41 /* Spyglass */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		12DEDA18D2BFE8A932028466DA317322 /* Sources */ = {
+		7E27B2033FD0D46D43995B4D182E85DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C549CF210E8EC528D1155191B623D502 /* Pods-Spyglass_Example-dummy.m in Sources */,
+				FB297B4301C885FB237CFDCE367D2A9E /* Enums.swift in Sources */,
+				7E12E2FDFCED8AD1911CB65185E4A50C /* Helpers.swift in Sources */,
+				FE3F4F67FF5E170C3AE152B272E3DBD3 /* Spyglass-dummy.m in Sources */,
+				9C3F15E1451464CEBF96AA06BB6AADFC /* Spyglass.swift in Sources */,
+				C1E04C13DD9A0EDEEFF1152E32298F64 /* SpyglassAnimationContext.swift in Sources */,
+				F5BCCAA82CE3FB3894C7F7F54618382F /* SpyglassAnimationController.swift in Sources */,
+				22B65834FDFCE7456467AA03AF541AEF /* SpyglassAnimator.swift in Sources */,
+				387858EAE9B474F72AEFAE7AC60F04F6 /* SpyglassDismisssalAnimationController.swift in Sources */,
+				0517FC9456DA49B5AAF6B54E80DB045B /* SpyglassInteractionController.swift in Sources */,
+				D291DFF822F2D4F137C78AF43A5F1B9F /* SpyglassPresentationAnimationController.swift in Sources */,
+				C1EF73D03B5282CE894BE3D68ADE1007 /* SpyglassRelativeRect.swift in Sources */,
+				1CF274494A482EAFEED071D70CB44124 /* SpyglassTransitionDestination.swift in Sources */,
+				43613C3F8F3202CB0CB3A9344CFDE83C /* SpyglassTransitionSource.swift in Sources */,
+				95D605486C74F778F3ED1CD9577E0C14 /* SpyglassUserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2DEFA529C83A93A6549BF9F4003A0F67 /* Sources */ = {
+		A144CEAB12C48EFA80C6794B58E7572A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B1448A6D28ECB2071219D0FA67A3CF /* Enums.swift in Sources */,
-				206E322CC6796A922EE0B818519659D3 /* Helpers.swift in Sources */,
-				8498E52E7C0AEE39D2E997A1D0C68630 /* Spyglass-dummy.m in Sources */,
-				7F68282D3BF89BA51D80F50E33877D83 /* Spyglass.swift in Sources */,
-				DD9FF62A4DFF52BD81E7671DFA4B584B /* SpyglassAnimationContext.swift in Sources */,
-				2F9C0C679B4F0AD52203951C89E14686 /* SpyglassAnimationController.swift in Sources */,
-				1534D8C6896BAD2F7EAA288DF655DB97 /* SpyglassAnimator.swift in Sources */,
-				3DB6DAED4AFE0E817D8A47274611D5E8 /* SpyglassDismisssalAnimationController.swift in Sources */,
-				A131DE0FE0415303CA1A9C315B9EBC8D /* SpyglassInteractionController.swift in Sources */,
-				2C5A6B9B8EEDCE97395F186EA81FF865 /* SpyglassPresentationAnimationController.swift in Sources */,
-				F32A92ABDDFE38EAF07003E3196B313F /* SpyglassRelativeRect.swift in Sources */,
-				7B8520AA1C8060CF2019499D23372FBF /* SpyglassTransitionDestination.swift in Sources */,
-				51E9DF11A82ACCD10448960BDF35100C /* SpyglassTransitionSource.swift in Sources */,
-				2C8DC5667358959F37FD7A0A4690BA10 /* SpyglassUserInfo.swift in Sources */,
+				C5BD048D58FF332D047E7477318C76E8 /* Pods-Spyglass_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A5C8CDE1CA554E2E5DE61947FFF830E /* Sources */ = {
+		B4D0DE43A914752EC39137B82770E13B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E3EA457F29351E729A38261D4E3EB74 /* Pods-Spyglass_Tests-dummy.m in Sources */,
+				CEC2C2704CB36448932DE09C312275DB /* Pods-Spyglass_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B82B812D4B6459AB37C9B6725317B973 /* PBXTargetDependency */ = {
+		9C53E11D173AF26E96ECECE47D7D077E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Spyglass;
-			target = B60822CAABD6C7B5013130FCED4FA817 /* Spyglass */;
-			targetProxy = 17468B07DA5318AEED44765B39C37654 /* PBXContainerItemProxy */;
+			target = 534FE7EBA5A6319823672B6DFBD01B41 /* Spyglass */;
+			targetProxy = 39CA1F13A63CFA5D84865F6FDBA63E52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2C44B20FBBD52981956594E0DD1AD0F4 /* Release */ = {
+		449EFAAEB5BE43F3AAA2ECE132D3A3A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE654F669986F7007304BE1C9AAA8390 /* Pods-Spyglass_Example.release.xcconfig */;
 			buildSettings = {
@@ -447,6 +449,38 @@
 				PRODUCT_NAME = Pods_Spyglass_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		58E9DD1EDF5EA901431B801E702F41BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07A1153EC04F88955DC87A67307CAD51 /* Spyglass.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spyglass/Spyglass-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spyglass/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spyglass/Spyglass.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Spyglass;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -497,7 +531,7 @@
 			};
 			name = Debug;
 		};
-		8243ACC2EB7F3E91BD3E0C6143484CEC /* Debug */ = {
+		917EE638AE3329A94FA92F2A160E0766 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 07A1153EC04F88955DC87A67307CAD51 /* Spyglass.xcconfig */;
 			buildSettings = {
@@ -530,109 +564,7 @@
 			};
 			name = Debug;
 		};
-		8D54696B3714D8343EBC372439CDD4C8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 766718CAB486ADF382022DFAE83BF3E0 /* Pods-Spyglass_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Spyglass_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Spyglass_Tests/Pods-Spyglass_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Spyglass_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9F016D614040F2A31225392CA993EAF5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAA8D8F18E49195C440CA8C5DE21C7D4 /* Pods-Spyglass_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Spyglass_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Spyglass_Tests/Pods-Spyglass_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Spyglass_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A3D936C2E2140D4AF759AB6BFB66E7D7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07A1153EC04F88955DC87A67307CAD51 /* Spyglass.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Spyglass/Spyglass-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Spyglass/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Spyglass/Spyglass.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Spyglass;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AD2684ACBDE33275581D7BD9C2486C05 /* Debug */ = {
+		92E3F73FABE30C2D53FFF9AD12CDE108 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F0A763074DA1CB9B54D661A0701EA046 /* Pods-Spyglass_Example.debug.xcconfig */;
 			buildSettings = {
@@ -708,18 +640,79 @@
 			};
 			name = Release;
 		};
+		BE2AC0A86347E06A01C354DB92B900E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAA8D8F18E49195C440CA8C5DE21C7D4 /* Pods-Spyglass_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spyglass_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spyglass_Tests/Pods-Spyglass_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Spyglass_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1424EBF013A46F7692372C0D306ECFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 766718CAB486ADF382022DFAE83BF3E0 /* Pods-Spyglass_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spyglass_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spyglass_Tests/Pods-Spyglass_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Spyglass_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		27D2E07BCA03D7EBD10DDFD891E819C0 /* Build configuration list for PBXNativeTarget "Spyglass" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8243ACC2EB7F3E91BD3E0C6143484CEC /* Debug */,
-				A3D936C2E2140D4AF759AB6BFB66E7D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -729,20 +722,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A548629B8D5840B68B3F37710405265 /* Build configuration list for PBXNativeTarget "Pods-Spyglass_Example" */ = {
+		69885C3C7A3DE52BB9D800D75940B9C8 /* Build configuration list for PBXNativeTarget "Spyglass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AD2684ACBDE33275581D7BD9C2486C05 /* Debug */,
-				2C44B20FBBD52981956594E0DD1AD0F4 /* Release */,
+				917EE638AE3329A94FA92F2A160E0766 /* Debug */,
+				58E9DD1EDF5EA901431B801E702F41BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D1C5F519AB9009BA8684792216700164 /* Build configuration list for PBXNativeTarget "Pods-Spyglass_Tests" */ = {
+		8CE10B928B0AF41A6FC344004E970C1F /* Build configuration list for PBXNativeTarget "Pods-Spyglass_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F016D614040F2A31225392CA993EAF5 /* Debug */,
-				8D54696B3714D8343EBC372439CDD4C8 /* Release */,
+				BE2AC0A86347E06A01C354DB92B900E6 /* Debug */,
+				C1424EBF013A46F7692372C0D306ECFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA39990B2F7E436CEAA6121065CA5341 /* Build configuration list for PBXNativeTarget "Pods-Spyglass_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92E3F73FABE30C2D53FFF9AD12CDE108 /* Debug */,
+				449EFAAEB5BE43F3AAA2ECE132D3A3A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
