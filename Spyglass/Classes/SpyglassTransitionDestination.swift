@@ -9,7 +9,13 @@
 import UIKit
 
 public protocol SpyglassTransitionDestinationProvider {
-    func transitionDestination() -> SpyglassTransitionDestination?
+    var transitionDestination: SpyglassTransitionDestination? { get }
+}
+
+public extension SpyglassTransitionDestinationProvider where Self: SpyglassTransitionDestination {
+    var transitionDestination: SpyglassTransitionDestination? {
+        return self
+    }
 }
 
 public protocol SpyglassTransitionDestination {

@@ -9,7 +9,13 @@
 import UIKit
 
 public protocol SpyglassTransitionSourceProvider {
-    func transitionSource() -> SpyglassTransitionSource?
+    var transitionSource: SpyglassTransitionSource? { get }
+}
+
+public extension SpyglassTransitionSourceProvider where Self: SpyglassTransitionSource {
+    var transitionSource: SpyglassTransitionSource? {
+        return self
+    }
 }
 
 public protocol SpyglassTransitionSource {

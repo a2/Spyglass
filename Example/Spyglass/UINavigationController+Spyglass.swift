@@ -10,17 +10,17 @@ import Spyglass
 import UIKit
 
 extension UINavigationController: SpyglassTransitionSourceProvider, SpyglassTransitionDestinationProvider {
-    public func transitionSource() -> SpyglassTransitionSource? {
+    public var transitionSource: SpyglassTransitionSource? {
         if let sourceProvider = topViewController as? SpyglassTransitionSourceProvider {
-            return sourceProvider.transitionSource()
+            return sourceProvider.transitionSource
         } else {
             return topViewController as? SpyglassTransitionSource
         }
     }
 
-    public func transitionDestination() -> SpyglassTransitionDestination? {
+    public var transitionDestination: SpyglassTransitionDestination? {
         if let destinationProvider = topViewController as? SpyglassTransitionDestinationProvider {
-            return destinationProvider.transitionDestination()
+            return destinationProvider.transitionDestination
         } else {
             return topViewController as? SpyglassTransitionDestination
         }

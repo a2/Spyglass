@@ -9,7 +9,7 @@
 import UIKit
 
 func findTransitionSource(for viewController: UIViewController) -> SpyglassTransitionSource? {
-    if let sourceProvider = viewController as? SpyglassTransitionSourceProvider, let source = sourceProvider.transitionSource() {
+    if let sourceProvider = viewController as? SpyglassTransitionSourceProvider, let source = sourceProvider.transitionSource {
         return source
     } else if let source = viewController as? SpyglassTransitionSource {
         return source
@@ -19,7 +19,7 @@ func findTransitionSource(for viewController: UIViewController) -> SpyglassTrans
 }
 
 func findTransitionDestination(for viewController: UIViewController) -> SpyglassTransitionDestination? {
-    if let destinationProvider = viewController as? SpyglassTransitionDestinationProvider, let destination = destinationProvider.transitionDestination() {
+    if let destinationProvider = viewController as? SpyglassTransitionDestinationProvider, let destination = destinationProvider.transitionDestination {
         return destination
     } else if let destination = viewController as? SpyglassTransitionDestination {
         return destination
