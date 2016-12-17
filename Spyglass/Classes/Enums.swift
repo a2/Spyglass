@@ -6,8 +6,6 @@
 //  Copyright © 2016 Pandamonia LLC. All rights reserved.
 //
 
-import Foundation
-
 public enum SpyglassTransitionType {
     case presentation
     case dismissal

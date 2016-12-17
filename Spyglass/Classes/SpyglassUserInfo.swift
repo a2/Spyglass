@@ -6,6 +6,4 @@
 //  Copyright © 2016 Pandamonia LLC. All rights reserved.
 //
 
-import Foundation
-
 public typealias SpyglassUserInfo = [AnyHashable: Any]
