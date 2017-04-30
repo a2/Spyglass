@@ -1,8 +1,7 @@
 {
   "name": "Spyglass",
-  "version": "0.1.0",
-  "summary": "A short description of Spyglass.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.0.1",
+  "summary": "A framework for custom view-to-view interactive transitions.",
   "homepage": "https://github.com/a2/Spyglass",
   "license": {
     "type": "MIT",
@@ -13,11 +12,11 @@
   },
   "source": {
     "git": "https://github.com/a2/Spyglass.git",
-    "tag": "0.1.0"
+    "tag": "0.0.1"
   },
   "social_media_url": "https://twitter.com/a2",
   "platforms": {
-    "ios": "7.0"
+    "ios": "8.0"
   },
   "source_files": "Spyglass/Classes/**/*"
 }
