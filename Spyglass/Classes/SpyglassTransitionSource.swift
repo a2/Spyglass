@@ -20,7 +20,7 @@ public extension SpyglassTransitionSourceProvider where Self: SpyglassTransition
 
 public protocol SpyglassTransitionSource {
     func userInfo(for transitionType: SpyglassTransitionType, from initialViewController: UIViewController, to finalViewController: UIViewController) -> SpyglassUserInfo?
-    func snapshotView(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> UIView
+    func sourceSnapshotView(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> UIView
     func sourceRect(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> SpyglassRelativeRect
 
     /* optional */ func sourceTransitionWillBegin(for transitionType: SpyglassTransitionType, viewController: UIViewController, userInfo: SpyglassUserInfo?)

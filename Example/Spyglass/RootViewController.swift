@@ -145,6 +145,10 @@ class RootViewController: UIViewController, ColorViewControllerDelegate, Spyglas
         return SpyglassRelativeRect(view: cell)
     }
 
+    func sourceSnapshotView(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> UIView {
+        return snapshotView(for: transitionType, userInfo: userInfo)
+    }
+
     func sourceRect(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> SpyglassRelativeRect {
         switch transitionType {
         case .presentation:
@@ -191,6 +195,10 @@ class RootViewController: UIViewController, ColorViewControllerDelegate, Spyglas
 
     // MARK: - Transition Destination
 
+    func destinationSnapshotView(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> UIView {
+        return snapshotView(for: transitionType, userInfo: userInfo)
+    }
+    
     func destinationRect(for transitionType: SpyglassTransitionType, userInfo: SpyglassUserInfo?) -> SpyglassRelativeRect {
         switch transitionType {
         case .presentation:

@@ -43,12 +43,12 @@ public class SpyglassInteractionController: NSObject, UIViewControllerInteractiv
         guard !(isAnimatingSnapshotView || panGestureRecognizer.state == .cancelled || panGestureRecognizer.state == .failed),
             let animationController = animationController,
             let context = animationController.context,
-            let snapshotView = context.snapshotView,
-            let snapshotViewSuperview = snapshotView.superview
+            let snapshotViewSuperview = context.snapshotView.superview
         else {
             return
         }
 
+        let snapshotView = context.snapshotView
         if !hasSnapshotViewAnchorPoint {
             let anchorPoint = panGestureRecognizer.location(in: snapshotView)
             let bounds = snapshotView.bounds

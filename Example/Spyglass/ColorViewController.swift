@@ -10,15 +10,28 @@ import Spyglass
 import UIKit
 
 class ColorViewController: UIViewController {
+    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var colorView: UIView!
 
     weak var delegate: ColorViewControllerDelegate?
     var index: Int?
     var color: UIColor? {
         didSet {
-            colorView?.backgroundColor = color
+            updateUI()
             navigationItem.title = color?.hexValue
         }
+    }
+
+    // MARK: - Configuration
+
+    private func updateUI() {
+        guard isViewLoaded else {
+            return
+        }
+
+        colorView.backgroundColor = color
+        nameLabel.text = color?.hexValue
+        nameLabel.textColor = color?.contrastingTextColor ?? .black
     }
 
     // MARK: - Actions
@@ -32,7 +45,7 @@ class ColorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        colorView.backgroundColor = color
+        updateUI()
     }
 }
 

@@ -77,34 +77,54 @@ public class SpyglassDismissalAnimationController: NSObject, SpyglassAnimationCo
 
         // Get snapshotView
         let userInfo: SpyglassUserInfo??
-        let snapshotView: UIView?
+        let snapshotView = UIView()
+        let snapshotSourceView: UIView?
         let snapshotSourceRect: SpyglassRelativeRect?
+        let snapshotDestinationView: UIView?
         let snapshotDestinationRect: SpyglassRelativeRect?
 
         if let source = transitionSource, transitionDestination != nil {
             let _userInfo = source.userInfo(for: transitionType, from: fromVC, to: toVC)
-            snapshotView = source.snapshotView(for: transitionType, userInfo: _userInfo)
+            snapshotSourceView = source.sourceSnapshotView(for: transitionType, userInfo: _userInfo)
             snapshotSourceRect = source.sourceRect(for: transitionType, userInfo: _userInfo)
             userInfo = .some(_userInfo)
         } else {
-            snapshotView = nil
+            snapshotSourceView = nil
             snapshotSourceRect = nil
             userInfo = nil
         }
 
         if let destination = transitionDestination, let userInfo = userInfo {
+            snapshotDestinationView = destination.destinationSnapshotView(for: transitionType, userInfo: userInfo)
             snapshotDestinationRect = destination.destinationRect(for: transitionType, userInfo: userInfo)
         } else {
+            snapshotDestinationView = nil
             snapshotDestinationRect = nil
         }
 
-        if let snapshotView = snapshotView, let sourceRect = snapshotSourceRect, snapshotDestinationRect != nil {
+        if let sourceRect = snapshotSourceRect, snapshotDestinationRect != nil {
+            if let sourceView = snapshotSourceView {
+                sourceView.alpha = 1
+                sourceView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+                sourceView.frame = snapshotView.bounds
+                sourceView.translatesAutoresizingMaskIntoConstraints = true
+                snapshotView.addSubview(sourceView)
+            }
+
+            if let destinationView = snapshotDestinationView {
+                destinationView.alpha = 0
+                destinationView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+                destinationView.frame = snapshotView.bounds
+                destinationView.translatesAutoresizingMaskIntoConstraints = true
+                snapshotView.addSubview(destinationView)
+            }
+
             snapshotView.frame = sourceRect.frame(relativeTo: containerView)
             containerView.addSubview(snapshotView)
         }
 
-        if let source = transitionSource, let destination = transitionDestination, let snapshotView = snapshotView, let sourceRect = snapshotSourceRect, let destinationRect = snapshotDestinationRect, let userInfo = userInfo {
-            context = SpyglassAnimationContext(source: source, destination: destination, userInfo: userInfo, snapshotView: snapshotView, snapshotSourceRect: sourceRect, snapshotDestinationRect: destinationRect)
+        if let source = transitionSource, let destination = transitionDestination, let sourceView = snapshotSourceView, let sourceRect = snapshotSourceRect, let destinationView = snapshotDestinationView, let destinationRect = snapshotDestinationRect, let userInfo = userInfo {
+            context = SpyglassAnimationContext(source: source, destination: destination, userInfo: userInfo, snapshotView: snapshotView, snapshotSourceView: sourceView, snapshotSourceRect: sourceRect, snapshotDestinationView: destinationView, snapshotDestinationRect: destinationRect)
         } else {
             context = nil
         }
@@ -136,11 +156,19 @@ public class SpyglassDismissalAnimationController: NSObject, SpyglassAnimationCo
                 toView.frame = finalToFrame
             }
 
-            if !wasInteractive, let snapshotView = snapshotView, let destinationRect = snapshotDestinationRect {
+            if let sourceView = snapshotSourceView {
+                sourceView.alpha = 0
+            }
+
+            if let destinationView = snapshotDestinationView {
+                destinationView.alpha = 1
+            }
+
+            if !wasInteractive, let destinationRect = snapshotDestinationRect {
                 snapshotView.frame = destinationRect.frame(relativeTo: containerView)
             }
         }, completion: { _ in
-            if !wasInteractive, let snapshotView = snapshotView {
+            if !wasInteractive {
                 snapshotView.removeFromSuperview()
             }
 

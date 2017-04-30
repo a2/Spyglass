@@ -12,16 +12,20 @@ public struct SpyglassAnimationContext {
     public var source: SpyglassTransitionSource
     public var destination: SpyglassTransitionDestination
     public var userInfo: SpyglassUserInfo?
-    public weak var snapshotView: UIView?
+    public var snapshotView: UIView
+    public var snapshotSourceView: UIView
     public var snapshotSourceRect: SpyglassRelativeRect
+    public var snapshotDestinationView: UIView
     public var snapshotDestinationRect: SpyglassRelativeRect
 
-    public init(source: SpyglassTransitionSource, destination: SpyglassTransitionDestination, userInfo: SpyglassUserInfo?, snapshotView: UIView, snapshotSourceRect: SpyglassRelativeRect, snapshotDestinationRect: SpyglassRelativeRect) {
+    public init(source: SpyglassTransitionSource, destination: SpyglassTransitionDestination, userInfo: SpyglassUserInfo?, snapshotView: UIView, snapshotSourceView: UIView, snapshotSourceRect: SpyglassRelativeRect, snapshotDestinationView: UIView, snapshotDestinationRect: SpyglassRelativeRect) {
         self.source = source
         self.destination = destination
         self.userInfo = userInfo
         self.snapshotView = snapshotView
+        self.snapshotSourceView = snapshotSourceView
         self.snapshotSourceRect = snapshotSourceRect
+        self.snapshotDestinationView = snapshotDestinationView
         self.snapshotDestinationRect = snapshotDestinationRect
     }
 }
