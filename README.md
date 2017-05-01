@@ -7,6 +7,10 @@
 
 ## Example
 
+<p align="center">
+    <img src="spyglass-demo.gif" width="320" />
+</p>
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
