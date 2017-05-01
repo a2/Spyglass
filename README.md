@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/Spyglass.svg?style=flat)](http://cocoapods.org/pods/Spyglass)
 
 ## Example
-
+<p style="text-align:center"><img src="spyglass-demo.gif"></p>
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
