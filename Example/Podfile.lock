@@ -1,5 +1,5 @@
 PODS:
-  - Spyglass (0.0.1)
+  - Spyglass (0.0.2)
 
 DEPENDENCIES:
   - Spyglass (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Spyglass: ab70db3557c636692f34939fbc67d08d5fad2490
+  Spyglass: 04e07992d6a3a7f773a6dadb091387f5a752803b
 
 PODFILE CHECKSUM: 7f29fec40c4a1bd8ec5cb01dfbe6b1a76544e34f
 

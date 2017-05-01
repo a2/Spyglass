@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Spyglass'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'A framework for custom view-to-view interactive transitions.'
   s.homepage         = 'https://github.com/a2/Spyglass'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

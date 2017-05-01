@@ -1,6 +1,6 @@
 {
   "name": "Spyglass",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "A framework for custom view-to-view interactive transitions.",
   "homepage": "https://github.com/a2/Spyglass",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/a2/Spyglass.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "social_media_url": "https://twitter.com/a2",
   "platforms": {
