@@ -16,8 +16,7 @@ public class Spyglass: NSObject, UINavigationControllerDelegate, UIViewControlle
     let isNavigationTransition = NSMapTable<UIPanGestureRecognizer, NSNumber>.weakToStrongObjects()
 
     func recognizedPanGesture(_ panGesture: UIPanGestureRecognizer) {
-        switch panGesture.state {
-        case .began:
+        if panGesture.state == .began {
             let interactionController = SpyglassInteractionController()
             interactionControllers.setObject(interactionController, forKey: panGesture)
 
@@ -48,10 +47,13 @@ public class Spyglass: NSObject, UINavigationControllerDelegate, UIViewControlle
 
                 viewController.dismiss(animated: true)
             }
-
-        default:
+        } else {
             if let interactionController = interactionControllers.object(forKey: panGesture) {
                 interactionController.didPan(with: panGesture)
+            }
+
+            if panGesture.state == .cancelled || panGesture.state == .ended {
+                interactionControllers.removeObject(forKey: panGesture)
             }
         }
     }
